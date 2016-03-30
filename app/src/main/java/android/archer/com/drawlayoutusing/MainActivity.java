@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ArrayList<String> menuLists;
-    private ArrayAdapter<String> adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         mDrawerLayout= (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList= (ListView) findViewById(R.id.Left_drawer);
-        menuLists=new ArrayList<String>();
+        menuLists=new ArrayList<>();
         for (int i=0;i<5;i++){
             menuLists.add("Button"+i);
 
-            adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,menuLists);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menuLists);
             mDrawerList.setAdapter(adapter);
             mDrawerList.setOnItemClickListener(this);
         }

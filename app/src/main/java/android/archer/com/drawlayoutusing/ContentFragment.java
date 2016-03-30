@@ -12,17 +12,16 @@ import android.widget.TextView;
  */
 public class ContentFragment extends Fragment{
 
-    private TextView mTextView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
        View view=inflater.inflate(R.layout.fragment_content,container,false);
         //获取View的实例化
-        mTextView= (TextView) view.findViewById(R.id.TextView);
+        TextView textView = (TextView) view.findViewById(R.id.TextView);
 
 
         String text=getArguments().getString("text");
-        mTextView.setText(text);
+        textView.setText(text);
         return view;
     }
 }
