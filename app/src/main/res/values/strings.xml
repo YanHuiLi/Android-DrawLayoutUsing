@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">DrawLayoutUsing</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+    <string name="choose">请选择</string>
 </resources>

@@ -12,27 +12,60 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+
+
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
 
-     private DrawerLayout mDrawerLayout;
+    private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ArrayList<String> menuLists;
+    private  String mTitle;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mTitle= (String) getTitle();
+
         mDrawerLayout= (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList= (ListView) findViewById(R.id.Left_drawer);
         menuLists=new ArrayList<>();
         for (int i=0;i<5;i++){
-            menuLists.add("Button"+i);
+            menuLists.add("Button" + i);
 
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menuLists);
             mDrawerList.setAdapter(adapter);
             mDrawerList.setOnItemClickListener(this);
+            /**
+
+            ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close)
+            {
+
+                @Override
+                public void onDrawerOpened(View drawerView) {
+                    super.onDrawerOpened(drawerView);
+
+
+                    getActionBar().setTitle(R.string.choose);
+                }
+
+
+                @Override
+                public void onDrawerClosed(View drawerView) {
+                    super.onDrawerClosed(drawerView);
+                    getActionBar().setTitle(mTitle);
+                }
+            };
+
+            mDrawerLayout.setDrawerListener(drawerToggle);
+             */
+
         }
 
 
